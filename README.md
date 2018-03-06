@@ -17,7 +17,7 @@ Future Ideas:
 
 0. Bootstrap 
     - Create navbar
-1. Establish CRUD capabilities for Location
+1. Establish CRUD capabilities for Cities
     - restaurant controller, routes, model
         - add image -> Paperclip
     - Potential inclusions:
@@ -39,6 +39,6 @@ Future Ideas:
 
 
 Restaurant  <-> Category (Join Table) = restaurant_categories (Do I need this to be a many-to-many relationship?)
-            <-> Location (Join Table) = location_restaurants
+            <-> City (Join Table) = city_restaurants
 
 **** Figure out how to manage addresses
