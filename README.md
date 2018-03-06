@@ -24,7 +24,7 @@ Future Ideas:
         - include facebook feed or some other way to keep up with events
         - include yelp scores
         - include google maps location
-2. Implement Restaurant -> Nested within location
+2. Implement Restaurant -> Nested within city
     - add image -> Paperclip
 3. Implement Category
 

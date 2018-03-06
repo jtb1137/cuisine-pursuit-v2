@@ -5,7 +5,15 @@
             <div class="btn-group">
                 <button><%= link_to "Back", root_path %></button>
                 <button><%= link_to "Edit", edit_city_path(@city) %></button>
+                <button><%= link_to "New Restaurant", new_city_restaurant_path(@city) %></button>
             </div>
         </div> 
+    </div>
+</div>
+<div class="container">
+    <div class="card-deck">
+        <% @city.restaurants.each do |restaurant| %>
+            <%= render 'restaurant_card', restaurant: restaurant %>
+        <% end %>
     </div>
 </div>
