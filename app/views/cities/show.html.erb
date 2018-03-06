@@ -1,9 +1,11 @@
-<div class="container">
-    <div class="container-fluid">
-        <h1 class="display-4"> <%= @city.name %>, <%= @city.state %> </h1>
-        <div class="btn-group">
-            <button><%= link_to "Back", root_path %></button>
-            <button><%= link_to "Edit", edit_city_path(@city) %></button>
-        </div>
-    </div> 
+<div class="container" style="background-image: url('<%= @city.image.url %>');">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <h1 class="display-4"> <%= @city.name %>, <%= @city.state %> </h1>
+            <div class="btn-group">
+                <button><%= link_to "Back", root_path %></button>
+                <button><%= link_to "Edit", edit_city_path(@city) %></button>
+            </div>
+        </div> 
+    </div>
 </div>

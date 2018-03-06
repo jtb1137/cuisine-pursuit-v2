@@ -41,7 +41,7 @@ class CitiesController < ApplicationController
     private
 
     def city_params
-        params.fetch(:city).permit(:name, :state)
+        params.require(:city).permit(:name, :state, :image)
     end
 
     def set_city
