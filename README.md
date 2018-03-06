@@ -26,9 +26,7 @@ Future Ideas:
         - include google maps location
 2. Implement Restaurant -> Nested within city
     - add image -> Paperclip
-3. Implement Category
-
-5. Implement Devise User with Omniauth
+3. Implement Devise User with Omniauth
     - Add ability to save restaurant to a trip (list of related restaurants)
         - Create nested routes for Trips
         - Establish CRUB capabilities for Trips
@@ -36,9 +34,13 @@ Future Ideas:
     - Potential inclusions:
         - Google sign-in
         - Trip dashboard with Facebook-style news feed for saved restaurants to keep up-to-date
+4. Implement Category and sorting
+
+
 
 
 Restaurant  <-> Category (Join Table) = restaurant_categories
             <-> City (Join Table) = city_restaurants (Not a has_many, through relation atm)
 
 **** Figure out how to manage addresses
+**** Better format images
