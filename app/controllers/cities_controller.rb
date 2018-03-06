@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-    before_action :set_city, only: [:show, :edit, :update, :delete]
+    before_action :set_city, only: [:show, :edit, :update, :destroy]
 
     def index
         @cities = City.all
@@ -9,13 +9,13 @@ class CitiesController < ApplicationController
     end
 
     def new
-        @city = City.new(city_params)
+        @city = City.new
     end
     
     def create
         @city = City.new(city_params)
 
-        if @city.save?
+        if @city.save
             redirect_to city_path(@city)
         else
             render 'new'
@@ -41,7 +41,7 @@ class CitiesController < ApplicationController
     private
 
     def city_params
-        params.require(:city).permit(:name, :state)
+        params.fetch(:city).permit(:name, :state)
     end
 
     def set_city
