@@ -1,8 +1,12 @@
-<div class="container-fluid">
-    <%= image_tag @restaurant.image.url(:large) %>
-    <h1 class="display-4"> <%= @restaurant.name %>, <%= @restaurant.street_number %> <%= @restaurant.street %></h1>
-    <div class="btn-group">
-        <button><%= link_to "Back", city_path(@city) %></button>
-        <button><%= link_to "Edit", edit_city_restaurant_path(@city, @restaurant) %></button>
-    </div>
+<div class="container mx-auto text-center">
+    <%=image_tag @restaurant.image.url(:large), class: "show-image image-fluid" %>
+    <div class="container">
+        <h1 class="display-4"> <%= @restaurant.name %></h1>
+        <p class="display-6"><%= @restaurant.street_number %> <%= @restaurant.street %></p>
+        <p class="display-6"><%= @city.name %> <%= @city.state %></p>
+        <div class="btn-group">
+            <button><%= link_to "Back", city_path(@city) %></button>
+            <button><%= link_to "Edit", edit_city_restaurant_path(@city, @restaurant) %></button>
+        </div>
+    </div> 
 </div>
