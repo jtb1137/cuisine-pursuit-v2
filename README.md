@@ -38,7 +38,7 @@ Future Ideas:
         - Trip dashboard with Facebook-style news feed for saved restaurants to keep up-to-date
 
 
-Restaurant  <-> Category (Join Table) = restaurant_categories (Do I need this to be a many-to-many relationship?)
-            <-> City (Join Table) = city_restaurants
+Restaurant  <-> Category (Join Table) = restaurant_categories
+            <-> City (Join Table) = city_restaurants (Not a has_many, through relation atm)
 
 **** Figure out how to manage addresses
