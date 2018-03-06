@@ -1,24 +1,44 @@
 # README
+CUISINE PURSUIT V2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Plan ahead for your next big trip with CUISINE PURSUIT, a web application built with Ruby-on-Rails, 
+designed to crowdsource the best hidden gems to eat at within a given city.
 
-Things you may want to cover:
+Bootstrap, Devise, Omniauth, Omniauth-facebook, Omniauth-twitter, Paperclip
 
-* Ruby version
+- Sortable by Category (fancy, fast-food, steakhouse, etc), location (NYC, Boston, etc)
+- Follow/subscribe/add restaurant to trip
 
-* System dependencies
+Future Ideas:
+    User Reviews/Likes
+    Comments
+    (Improved social interaction)
+    Yelp API
 
-* Configuration
+0. Bootstrap 
+    - Create navbar
+1. Establish CRUD capabilities for Location
+    - restaurant controller, routes, model
+        - add image -> Paperclip
+    - Potential inclusions:
+        - include facebook feed or some other way to keep up with events
+        - include yelp scores
+        - include google maps location
+2. Implement Restaurant -> Nested within location
+    - add image -> Paperclip
+3. Implement Category
 
-* Database creation
+5. Implement Devise User with Omniauth
+    - Add ability to save restaurant to a trip (list of related restaurants)
+        - Create nested routes for Trips
+        - Establish CRUB capabilities for Trips
+    - Needs a User page
+    - Potential inclusions:
+        - Google sign-in
+        - Trip dashboard with Facebook-style news feed for saved restaurants to keep up-to-date
 
-* Database initialization
 
-* How to run the test suite
+Restaurant  <-> Category (Join Table) = restaurant_categories (Do I need this to be a many-to-many relationship?)
+            <-> Location (Join Table) = location_restaurants
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**** Figure out how to manage addresses
