@@ -17,10 +17,6 @@ ActiveRecord::Schema.define(version: 20180308173859) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "city_image_file_name"
-    t.string "city_image_content_type"
-    t.integer "city_image_file_size"
-    t.datetime "city_image_updated_at"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
