@@ -42,5 +42,8 @@ Future Ideas:
 Restaurant  <-> Category (Join Table) = restaurant_categories
             <-> City (Join Table) = city_restaurants (Not a has_many, through relation atm)
 
+**** Don't forget to add validations!!!!!
 **** Figure out how to manage addresses
 **** Better format images
+**** Add the user_id to restaurant if they created it?
+

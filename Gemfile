@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Safely store API keys
+gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
+
 # Bootstrap Javascript requirement
 gem 'jquery-rails'
 # Bootstrap for front end styling
@@ -42,6 +45,13 @@ gem 'paperclip', '~> 5.2', '>= 5.2.1'
 
 # User authentication
 gem 'devise', '~> 4.4', '>= 4.4.1'
+# Google signin
+gem 'omniauth-google-oauth2'
+# Github signin
+gem 'omniauth-github'
+# Debugging
+gem 'pry'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
