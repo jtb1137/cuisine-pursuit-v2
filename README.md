@@ -46,4 +46,5 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 **** Figure out how to manage addresses
 **** Better format images
 **** Add the user_id to restaurant if they created it?
+**** Fix Google signin not having a username
 
