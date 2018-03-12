@@ -5,8 +5,8 @@
         <p class="display-6"><%= @restaurant.street_number %> <%= @restaurant.street %></p>
         <p class="display-6"><%= @city.name %> <%= @city.state %></p>
         <div class="btn-group">
-            <button><%= link_to "Back", city_path(@city) %></button>
-            <button><%= link_to "Edit", edit_city_restaurant_path(@city, @restaurant) %></button>
+            <%= link_to "Back", city_path(@city), class: "btn btn-secondary" %>
+            <%= link_to "Edit", edit_city_restaurant_path(@city, @restaurant), class: "btn btn-secondary" %>
         </div>
     </div> 
 </div>

@@ -1,11 +1,11 @@
-<div class="container mx-auto text-center">
-    <%=image_tag @city.image.url(:large), class: "show-image image-fluid" %>
+<div class="container py-2 mx-auto text-center">
+    <%=image_tag @city.image.url(:large), class: "show-image image-fluid rounded" %>
     <div class="container">
         <h1 class="display-4"> <%= @city.name %>, <%= @city.state %> </h1>
         <div class="btn-group">
-            <button><%= link_to "Back", root_path %></button>
-            <button><%= link_to "Edit", edit_city_path(@city) %></button>
-            <button><%= link_to "New Restaurant", new_city_restaurant_path(@city) %></button>
+            <%= link_to "Back", root_path, class: "btn btn-secondary" %>
+            <%= link_to "Edit", edit_city_path(@city), class: "btn btn-secondary" %>
+            <%= link_to "New Restaurant", new_city_restaurant_path(@city), class: "btn btn-secondary" %>
         </div>
     </div> 
 </div>
