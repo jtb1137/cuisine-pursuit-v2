@@ -38,10 +38,6 @@ Future Ideas:
 
 
 
-
-Restaurant  <-> Category (Join Table) = restaurant_categories
-            <-> City (Join Table) = city_restaurants (Not a has_many, through relation atm)
-
 **** Figure out how to better manage addresses
 **** Better format images
 **** Better format forms
@@ -51,10 +47,6 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 **** Figure out non-nested restaurant builder
 **** Unify devise and other model error formatting 
 
-
-Figure out "Favorite" action
-
-
-Categories model for restaurants
+Add User_id to Restaurants and have a "Submitted by" field
 View all cities page? sort by state? can this be one controller action => list/filter page?
 May need admins for Create, Update, Delete of Cities - Need to figure out restaurant permissions
