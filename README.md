@@ -48,9 +48,13 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 **** Add the user_id to restaurant if they created it?
 **** Fix Google signin - No username
 **** User profile pictures?
-**** Create restaurant from homepage and be able to build city association in form?
+**** Figure out non-nested restaurant builder
 **** Unify devise and other model error formatting 
 
-Follow/List model
+
+Figure out "Favorite" action
+
+
 Categories model for restaurants
 View all cities page? sort by state? can this be one controller action => list/filter page?
+May need admins for Create, Update, Delete of Cities - Need to figure out restaurant permissions

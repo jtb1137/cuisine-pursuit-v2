@@ -2,6 +2,13 @@
     <%=image_tag @restaurant.image.url(:large), class: "show-image image-fluid" %>
     <div class="container">
         <h1 class="display-4"> <%= @restaurant.name %></h1>
+
+        <% if @is_favorite %>
+            <%= link_to "Unfavorite", favorite_city_restaurant_path(@city, @restaurant, button: "unfavorite"), method: :put, class: "btn btn-primary" %>
+        <% else %>
+            <%= link_to "Favorite", favorite_city_restaurant_path(@city, @restaurant, button: "favorite"), method: :put, class: "btn btn-primary" %>
+        <% end %>
+
         <p class="display-6"><%= @restaurant.street_number %> <%= @restaurant.street %></p>
         <p class="display-6"><%= @city.name %> <%= @city.state %></p>
         <div class="btn-group">
