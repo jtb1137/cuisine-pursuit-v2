@@ -48,3 +48,9 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 **** Add the user_id to restaurant if they created it?
 **** Fix Google signin not having a username
 
+TODO:
+User Profile Page
+Validations for forms
+Authenticated User vs guest capabilites
+Follow/List model
+Categories model for restaurants
