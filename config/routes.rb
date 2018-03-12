@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :restaurants
   end
 
+  get ':username', to: 'profiles#show', as: :profile
+
   root 'cities#index'
 end
