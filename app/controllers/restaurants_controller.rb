@@ -20,6 +20,7 @@ class RestaurantsController < ApplicationController
 
     def show
         @is_favorite = FavoriteRestaurant.find_by(user: current_user, restaurant: @restaurant).present?
+        
     end
 
     def edit
