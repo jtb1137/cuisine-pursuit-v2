@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   has_many :favorite_restaurants
-  has_many :restaurants, through: :favorite_restaurants
+  has_many :favorites, through: :favorite_restaurants, source: :restaurant
 
   def self.new_with_session(params, session)
     super.tap do |user|
