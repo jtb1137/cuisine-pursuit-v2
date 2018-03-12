@@ -51,9 +51,8 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 
 TODO:
 Validations for forms
-    City must be unique
     Make State property a dropdown on the form
-    Make errors not look ridiculous
+    Unify devise and other model error formatting 
 Authenticated User vs guest capabilites
 Follow/List model
 Categories model for restaurants

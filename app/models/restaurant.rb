@@ -5,25 +5,10 @@ class Restaurant < ApplicationRecord
 
     validates :name, presence: true
     validates :street_number, presence: true
+    validates :street_number, numericality: { only_integer: true }
     validates :street, presence: true
     validates :image, presence: true
 
     belongs_to :city
 
-
-    
 end
-
-
-create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.integer "street_number"
-    t.string "street"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "city_id"
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
-  end
