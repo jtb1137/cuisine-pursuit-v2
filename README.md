@@ -44,6 +44,7 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 
 **** Figure out how to better manage addresses
 **** Better format images
+**** Better format forms
 **** Add the user_id to restaurant if they created it?
 **** Fix Google signin - No username
 **** User profile pictures?
@@ -52,4 +53,4 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 
 Follow/List model
 Categories model for restaurants
-View all cities page? sort by state?
+View all cities page? sort by state? can this be one controller action => list/filter page?
