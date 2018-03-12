@@ -48,11 +48,8 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 **** Fix Google signin - No username
 **** User profile pictures?
 **** Create restaurant from homepage and be able to build city association in form?
+**** Unify devise and other model error formatting 
 
-TODO:
-Validations for forms
-    Make State property a dropdown on the form
-    Unify devise and other model error formatting 
-Authenticated User vs guest capabilites
 Follow/List model
 Categories model for restaurants
+View all cities page? sort by state?

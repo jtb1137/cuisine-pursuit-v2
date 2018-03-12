@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
     before_action :set_city
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+    skip_before_action :authenticate_user!, only: [:show]
 
     def new
         @restaurant = @city.restaurants.build
