@@ -1,10 +1,26 @@
-<div class="container mx-auto text-center">
-    <div class="container">
-        <h1 class="display-4"><%= @user.username %></h1>
-        <div class="btn-group">
-            <%= link_to "Settings", edit_user_registration_path(current_user), class: "btn btn-secondary" %>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+<div class="container">
+    <div class="card text-center my-2">
+        <div class="card-header display-4">
+            <%= @user.username %>
         </div>
-        <p class="display-6">Display saved/favorited restaurants</p>
-    </div> 
+        <div class="card-body row">
+            <div class="col-sm-6">
+                <h4>Maybe more info</h4>
+                <p>Bio</p>
+                <p>Hometown</p>
+            </div>
+            <div class="col-sm-6">
+                <h2>Favorites</h2>
+                <% @user.favorites.each do |restaurant| %>
+                    <p><%= restaurant.name %></p>
+                <% end %>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group">
+                <%= link_to "Settings", edit_user_registration_path(current_user), class: "btn btn-secondary" %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+            </div>
+        </div>
+    </div>
 </div>
