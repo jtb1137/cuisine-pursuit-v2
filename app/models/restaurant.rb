@@ -11,4 +11,7 @@ class Restaurant < ApplicationRecord
 
     belongs_to :city
 
+    has_many :favorite_restaurants
+    has_many :users, through: :favorite_restaurants
+
 end

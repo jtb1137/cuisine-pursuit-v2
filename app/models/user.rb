@@ -6,7 +6,10 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:github, :google_oauth2]
          
   validates :username, presence: true
+  validates :username, uniqueness: true
 
+  has_many :favorite_restaurants
+  has_many :restaurants, through: :favorite_restaurants
 
   def self.new_with_session(params, session)
     super.tap do |user|
