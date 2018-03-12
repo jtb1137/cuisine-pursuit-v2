@@ -47,10 +47,13 @@ Restaurant  <-> Category (Join Table) = restaurant_categories
 **** Add the user_id to restaurant if they created it?
 **** Fix Google signin - No username
 **** User profile pictures?
+**** Create restaurant from homepage and be able to build city association in form?
 
 TODO:
-User Profile Page
 Validations for forms
+    City must be unique
+    Make State property a dropdown on the form
+    Make errors not look ridiculous
 Authenticated User vs guest capabilites
 Follow/List model
 Categories model for restaurants
