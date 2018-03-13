@@ -13,10 +13,11 @@
         <%= f.text_field :address, class: "form-control" %>
     </div> 
     <div class="form-group">
-        <%= f.collection_select :category_id, Category.all.order(:name), :id, :name, {selected: @restaurant.category_id, include_blank: "Select a category"} %>
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+        <!-- , {selected: @restaurant.category_id}, {multipart: true} -->
     </div>
     <div class="form-group">
-        <%= f.fields_for :category, Category.new do |category_field| %>
+        <%= f.fields_for :categories, @restaurant.categories.build do |category_field| %>
             Name: <%= category_field.text_field :name %>
         <% end %>
     </div> 

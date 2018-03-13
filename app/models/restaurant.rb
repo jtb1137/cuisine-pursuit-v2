@@ -8,9 +8,28 @@ class Restaurant < ApplicationRecord
     validates :image, presence: true
 
     belongs_to :city
-    belongs_to :category
-    accepts_nested_attributes_for :category, reject_if: proc { |attributes| attributes['name'].blank? }
+
+    has_many :restaurant_categories
+    has_many :categories, through: :restaurant_categories
+
+    accepts_nested_attributes_for :categories, reject_if: :all_blank
 
     has_many :favorite_restaurants
     has_many :favorited_by, through: :favorite_restaurants, source: :user
+
+    # by_city(city)
+    # by_category(category)
+    # newest(days)
+    # most_favorited
+    #
+    #
+    #
+
+    def categories_attributes=(category_attributes)
+        category_attributes.values.each do |attribute|
+            category = Category.find_or_create_by(attribute)
+            self.categories << category
+        end
+    end
+
 end

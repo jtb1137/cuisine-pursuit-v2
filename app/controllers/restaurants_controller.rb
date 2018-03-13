@@ -3,6 +3,9 @@ class RestaurantsController < ApplicationController
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :favorite]
     skip_before_action :authenticate_user!, only: [:show]
 
+    def index
+    end
+
     def new
         @restaurant = @city.restaurants.build
     end
@@ -61,7 +64,7 @@ class RestaurantsController < ApplicationController
     end
 
     def restaurant_params
-        params.require(:restaurant).permit(:name, :address, :image, :submitted_by, :category_id, category_attributes: [ :name ])
+        params.require(:restaurant).permit(:name, :address, :image, :submitted_by, category_ids:[], categories_attributes: [ :name ])
     end
 
 end
