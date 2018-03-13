@@ -8,7 +8,10 @@
             <div class="col-sm-6">
                 <p><%= @restaurant.address %></p>
                 <p><%= @city.name %> <%= @city.state %></p>
-                <% if user_signed_in? %>
+                <p>Category: <%= @restaurant.category.name %></p>
+            </div>
+            <div class="col-sm-6">
+               <% if user_signed_in? %>
                     <% if @favorite %>
                         <%= link_to "Unfavorite", favorite_city_restaurant_path(@city, @restaurant, button: "unfavorite"), method: :put, class: "btn btn-primary" %>
                     <% else %>
@@ -17,9 +20,6 @@
                 <% end %>         
                 <p> Favorites: <%= @restaurant.favorited_by.count %></p>
                 <small>Submitted By: <%= @submitted.username %></small>
-            </div>
-            <div class="col-sm-6">
-                <p>Yelp/Facebook Feeds?</p>
             </div>
         </div>
         <div class="card-footer">

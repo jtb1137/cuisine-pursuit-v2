@@ -11,7 +11,6 @@ designed to crowdsource the best hidden gems to eat at within a given city.
 **** Non-nested restaurant creator with city selector
 **** Sortable restaurant page - All restaurants
 **** All cities list page
-**** Figure out how to better manage addresses
 **** Paginate!
 
 May need admins for Create, Update, Delete of Cities - Need to figure out restaurant permissions

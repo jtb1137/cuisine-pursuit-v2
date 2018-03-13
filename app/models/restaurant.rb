@@ -9,7 +9,7 @@ class Restaurant < ApplicationRecord
 
     belongs_to :city
     belongs_to :category
-    accepts_nested_attributes_for :category
+    accepts_nested_attributes_for :category, reject_if: proc { |attributes| attributes['name'].blank? }
 
     has_many :favorite_restaurants
     has_many :favorited_by, through: :favorite_restaurants, source: :user
