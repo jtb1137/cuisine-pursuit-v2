@@ -4,9 +4,7 @@ class Restaurant < ApplicationRecord
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
     validates :name, presence: true
-    validates :street_number, presence: true
-    validates :street_number, numericality: { only_integer: true }
-    validates :street, presence: true
+    validates :address, presence: true
     validates :image, presence: true
 
     belongs_to :city

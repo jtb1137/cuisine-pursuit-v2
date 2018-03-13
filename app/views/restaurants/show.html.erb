@@ -6,7 +6,7 @@
         </div>
         <div class="card-body row">
             <div class="col-sm-6">
-                <p><%= @restaurant.street_number %> <%= @restaurant.street %></p>
+                <p><%= @restaurant.address %></p>
                 <p><%= @city.name %> <%= @city.state %></p>
                 <% if user_signed_in? %>
                     <% if @favorite %>
@@ -16,6 +16,7 @@
                     <% end %>
                 <% end %>         
                 <p> Favorites: <%= @restaurant.favorited_by.count %></p>
+                <small>Submitted By: <%= @submitted.username %></small>
             </div>
             <div class="col-sm-6">
                 <p>Yelp/Facebook Feeds?</p>

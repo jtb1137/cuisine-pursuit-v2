@@ -2,8 +2,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
   def change
     create_table :restaurants do |t|
       t.string :name
-      t.integer :street_number
-      t.string :street
+      t.string :address
 
       t.timestamps
     end

@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
     def create
         @restaurant = @city.restaurants.build(restaurant_params)
         @restaurant.city_id = @city.id
+        @restaurant.submitted_by = current_user.id
 
         if @restaurant.save
             redirect_to city_restaurant_path(@city, @restaurant)
@@ -20,6 +21,7 @@ class RestaurantsController < ApplicationController
 
     def show
         @favorite = FavoriteRestaurant.find_by(user: current_user, restaurant: @restaurant).present?
+        @submitted = User.find(@restaurant.submitted_by)
     end
 
     def edit
@@ -59,7 +61,7 @@ class RestaurantsController < ApplicationController
     end
 
     def restaurant_params
-        params.require(:restaurant).permit(:name, :street_number, :street, :image, :category_id, category_attributes: [ :name ])
+        params.require(:restaurant).permit(:name, :address, :image, :submitted_by, :category_id, category_attributes: [ :name ])
     end
 
 end
