@@ -10,6 +10,8 @@ class Restaurant < ApplicationRecord
     validates :image, presence: true
 
     belongs_to :city
+    belongs_to :category
+    accepts_nested_attributes_for :category
 
     has_many :favorite_restaurants
     has_many :favorited_by, through: :favorite_restaurants, source: :user

@@ -16,5 +16,13 @@
         <%= f.label :street %>
         <%= f.text_field :street, class: "form-control" %>
     </div> 
+    <div class="form-group">
+        <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: "Select a Category" %>
+    </div>
+    <div class="form-group">
+        <%= f.fields_for :category, Category.new do |category_field| %>
+            Name: <%= category_field.text_field :name %>
+        <% end %>
+    </div> 
     <%= f.submit class: "btn btn-primary"%>
 <% end %>
