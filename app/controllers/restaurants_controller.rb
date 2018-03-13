@@ -19,8 +19,7 @@ class RestaurantsController < ApplicationController
     end
 
     def show
-        @is_favorite = FavoriteRestaurant.find_by(user: current_user, restaurant: @restaurant).present?
-        
+        @favorite = FavoriteRestaurant.find_by(user: current_user, restaurant: @restaurant).present?
     end
 
     def edit
@@ -60,7 +59,7 @@ class RestaurantsController < ApplicationController
     end
 
     def restaurant_params
-        params.require(:restaurant).permit(:name, :street_number, :street, :image)
+        params.require(:restaurant).permit(:name, :street_number, :street, :image, :category_id)
     end
 
 end

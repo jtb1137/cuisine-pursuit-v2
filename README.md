@@ -4,7 +4,7 @@ CUISINE PURSUIT V2
 Plan ahead for your next big trip with CUISINE PURSUIT, a web application built with Ruby-on-Rails, 
 designed to crowdsource the best hidden gems to eat at within a given city.
 
-
+**** Fix City Show Page
 **** Implement Categories
 **** Improve form layout
 **** More uniform error reporting on forms
