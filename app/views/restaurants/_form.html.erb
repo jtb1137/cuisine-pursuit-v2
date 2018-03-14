@@ -13,12 +13,14 @@
         <%= f.text_field :address, class: "form-control" %>
     </div> 
     <div class="form-group">
+        <%= f.label :category %>    
         <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
         <!-- , {selected: @restaurant.category_id}, {multipart: true} -->
     </div>
     <div class="form-group">
         <%= f.fields_for :categories, @restaurant.categories.build do |category_field| %>
-            Name: <%= category_field.text_field :name %>
+            <%= category_field.label "New Category" %>
+            <%= category_field.text_field :name %>
         <% end %>
     </div> 
     <%= f.submit class: "btn btn-primary"%>

@@ -12,7 +12,7 @@ class Restaurant < ApplicationRecord
     has_many :restaurant_categories
     has_many :categories, through: :restaurant_categories
 
-    accepts_nested_attributes_for :categories, reject_if: :all_blank
+    accepts_nested_attributes_for :categories, reject_if: proc { |attribute| attribute['name'] === "" }
 
     has_many :favorite_restaurants
     has_many :favorited_by, through: :favorite_restaurants, source: :user
@@ -26,9 +26,12 @@ class Restaurant < ApplicationRecord
     #
 
     def categories_attributes=(category_attributes)
+        
         category_attributes.values.each do |attribute|
-            category = Category.find_or_create_by(attribute)
-            self.categories << category
+            if attribute["name"] != ""
+                category = Category.find_or_create_by(attribute)
+                self.categories << category 
+            end
         end
     end
 
