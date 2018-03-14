@@ -52,6 +52,9 @@ gem 'omniauth-github'
 # Debugging
 gem 'pry'
 
+# Location services
+gem 'geocoder'
+
 
 
 group :development, :test do
