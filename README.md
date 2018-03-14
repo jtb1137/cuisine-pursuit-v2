@@ -9,3 +9,4 @@ designed to crowdsource the best hidden gems to eat at within a given city.
 **** Make Google Maps responsive
 **** Paginate
 **** Admin? -> Determine permissions
+**** Add Devise alerts back in
