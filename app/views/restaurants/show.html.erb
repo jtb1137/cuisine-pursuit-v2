@@ -6,8 +6,9 @@
         </div>
         <div class="card-body row">
             <div class="col-sm-6">
-                <p><%= @restaurant.address %></p>
-                <p><%= @city.name %> <%= @city.state %></p>
+                <p><%= @restaurant.address1 %></p>
+                <p><%= @restaurant.address2 %></p>
+                <p><%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zipcode %></p>
                 <p>
                 <% @restaurant.categories.each do |category| %>
                     <%= category.name %>
