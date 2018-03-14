@@ -23,10 +23,6 @@ ActiveRecord::Schema.define(version: 20180313202510) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "favorite_restaurants", force: :cascade do |t|
@@ -52,7 +48,6 @@ ActiveRecord::Schema.define(version: 20180313202510) do
     t.string "zipcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "city_id"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
