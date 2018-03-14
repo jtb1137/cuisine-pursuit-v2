@@ -8,14 +8,14 @@ class Restaurant < ApplicationRecord
     validates :image, presence: true
 
     belongs_to :city
-
     has_many :restaurant_categories
     has_many :categories, through: :restaurant_categories
-
     accepts_nested_attributes_for :categories, reject_if: proc { |attribute| attribute['name'] === "" }
-
     has_many :favorite_restaurants
     has_many :favorited_by, through: :favorite_restaurants, source: :user
+
+    scope :newest, -> { order("created_at DESC").limit(25) }
+    scope :oldest, -> { order("created_at ASC").limit(25) }
 
     # by_city(city)
     # by_category(category)

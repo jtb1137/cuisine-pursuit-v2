@@ -3,7 +3,7 @@
         <% if @city.restaurants.empty?  %>
             <h3 class="text-center">There are no restaurants saved to this city yet! </h3>
         <% else %>
-            <% @city.restaurants.each do |restaurant| %>
+            <% @restaurants.each do |restaurant| %>
                 <div class="col-md-4 py-2">
                     <%= render 'cities/restaurant_card', restaurant: restaurant, city: @city %>
                     </div>

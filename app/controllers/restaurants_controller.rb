@@ -4,6 +4,12 @@ class RestaurantsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:show]
 
     def index
+        case params[:button]
+        when "newest"
+            @restaurants = @city.restaurants.newest
+        when "oldest"
+            @restaurants = @city.restaurants.oldest
+        end
     end
 
     def new
