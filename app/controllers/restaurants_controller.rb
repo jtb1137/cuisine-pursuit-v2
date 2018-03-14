@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
 
     def new
         @restaurant = @city.restaurants.build
+        @categories = 3.times.collect { @restaurant.categories.build }
     end
 
     def create
@@ -28,6 +29,7 @@ class RestaurantsController < ApplicationController
     end
 
     def edit
+        @categories = 3.times.collect { @restaurant.categories.build }
     end
 
     def update
