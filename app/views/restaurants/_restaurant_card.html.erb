@@ -1,13 +1,15 @@
 <div class="col-md-4 mb-4">
-    <div class="card" style="width: 18rem;">
-        <%= image_tag restaurant.image.url(:medium), class: "card-img-top", alt: "card-img-top" %>
+    <div class="card text-center" style="width: 20rem;">
+        <%= image_tag restaurant.image.url(:thumb), class: "card-img-top", alt: "card-img-top" %>
+        <div class="card-header">
+            <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        </div>
         <div class="card-body">
-            <h5 class="card-title"><%= restaurant.name %></h5>
             <p class="card-text">This should be a description, I think.</p>
             <%= link_to "View Restaurant", restaurant_path(restaurant), class: "btn btn-primary" %>
         </div>
         <div class="card-footer">
-            <ul class="list_inline">
+            <ul class="list-inline">
                 <% restaurant.categories.each do |category| %>
                     <li class="list-inline-item"><%= category.name %></li>
                 <% end %>

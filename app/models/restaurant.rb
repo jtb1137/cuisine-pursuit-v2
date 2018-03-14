@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
-    has_attached_file :image, styles: { large: "1000x640#", medium: "286x180#" }, default_url: "/images/:style/missing.png",
-        convert_options: {:medium => "-gravity center -extent 286x180"}
+    has_attached_file :image, styles: { medium: "900x400#", thumb: "286x180#" }, default_url: "/images/:style/missing.png",
+        convert_options: {:medium => "-gravity center -extent 900x400", :thumb => "-gravity center -extent 286x180"}
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
     validates :name, presence: true
