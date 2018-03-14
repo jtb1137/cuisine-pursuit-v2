@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:github, :google_oauth2]
+  
+  has_attached_file :avatar, styles: { medium: '150x150#' }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
          
   validates :username, presence: true
   validates :username, uniqueness: true
