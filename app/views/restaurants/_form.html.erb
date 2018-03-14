@@ -1,4 +1,4 @@
-<%= form_for [@city, @restaurant], html: { multipart: true } do |f| %>
+<%= form_for @restaurant, html: { multipart: true } do |f| %>
 <%= render 'layouts/error_messages', target: @restaurant %>
     <div class="form-group">
         <%= f.label :image %>

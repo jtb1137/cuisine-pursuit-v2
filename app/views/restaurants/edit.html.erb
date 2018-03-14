@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Edit Restaurant</h1>
-    <%= link_to "Back", city_path(@city), class: "btn btn-secondary" %>
+    <%= link_to "Back", restaurants_path, class: "btn btn-secondary" %>
     <%= render 'form' %>
-    <%= link_to "Delete", city_restaurant_path(@restaurant.city, @restaurant), method: :delete %>
+    <%= link_to "Delete", restaurant_path(@restaurant), method: :delete %>
 </div>

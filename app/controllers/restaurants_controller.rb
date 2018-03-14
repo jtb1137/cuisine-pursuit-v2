@@ -1,29 +1,21 @@
 class RestaurantsController < ApplicationController
-    before_action :set_city
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :favorite]
     skip_before_action :authenticate_user!, only: [:show]
 
     def index
-        case params[:button]
-        when "newest"
-            @restaurants = @city.restaurants.newest
-        when "oldest"
-            @restaurants = @city.restaurants.oldest
-        end
     end
 
     def new
-        @restaurant = @city.restaurants.build
+        @restaurant = Restaurant.new
         @categories = 3.times.collect { @restaurant.categories.build }
     end
 
     def create
-        @restaurant = @city.restaurants.build(restaurant_params)
-        @restaurant.city_id = @city.id
+        @restaurant = Restaurant.new(restaurant_params)
         @restaurant.submitted_by = current_user.id
 
         if @restaurant.save
-            redirect_to city_restaurant_path(@city, @restaurant)
+            redirect_to restaurant_path(@restaurant)
         else
             render 'new'
         end
@@ -40,7 +32,7 @@ class RestaurantsController < ApplicationController
 
     def update
         if @restaurant.update(restaurant_params)
-            redirect_to city_restaurant_path(@city, @restaurant)
+            redirect_to restaurant_path(@restaurant)
         else
             render 'new'
         end
@@ -48,25 +40,21 @@ class RestaurantsController < ApplicationController
 
     def destroy
         @restaurant.destroy
-        redirect_to city_path(@city)
+        redirect_to root_path
     end
 
     def favorite
         button = params[:button]
         if button == "favorite"
             current_user.favorites << @restaurant
-            redirect_to city_restaurant_path(@city, @restaurant)
+            redirect_to restaurant_path(@restaurant)
         elsif button == "unfavorite"
             current_user.favorites.destroy(@restaurant)
-            redirect_to city_restaurant_path(@city, @restaurant)
+            redirect_to restaurant_path(@restaurant)
         end
     end
 
     private
-    def set_city
-        @city = City.find(params[:city_id])
-    end
-
     def set_restaurant
         @restaurant = Restaurant.find(params[:id])
     end
