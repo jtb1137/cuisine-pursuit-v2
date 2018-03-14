@@ -1,13 +1,11 @@
 class Restaurant < ApplicationRecord
-    has_attached_file :image, styles: { large: "1280x720#", medium: "286x180#" }, default_url: "/images/:style/missing.png",
+    has_attached_file :image, styles: { large: "1000x640#", medium: "286x180#" }, default_url: "/images/:style/missing.png",
         convert_options: {:medium => "-gravity center -extent 286x180"}
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
     validates :name, presence: true
-    validates :address, presence: true
     validates :image, presence: true
 
-    belongs_to :city
     has_many :restaurant_categories
     has_many :categories, through: :restaurant_categories
     accepts_nested_attributes_for :categories, reject_if: proc { |attribute| attribute['name'] === "" }
@@ -16,14 +14,6 @@ class Restaurant < ApplicationRecord
 
     scope :newest, -> { order("created_at DESC").limit(25) }
     scope :oldest, -> { order("created_at ASC").limit(25) }
-
-    # by_city(city)
-    # by_category(category)
-    # newest(days)
-    # most_favorited
-    #
-    #
-    #
 
     def categories_attributes=(category_attributes)
         
