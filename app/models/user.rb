@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:github, :google_oauth2]
   
-  has_attached_file :avatar, styles: { medium: '150x150#' }
+  has_attached_file :avatar, styles: { thumb: '150x150#' }, :default_url => "http://via.placeholder.com/150x150"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
          
   validates :username, presence: true
