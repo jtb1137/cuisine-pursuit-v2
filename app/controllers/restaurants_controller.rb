@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:show]
 
     def index
+        # visitor_location = request.location.city
         @restaurants = Restaurant.all
     end
 

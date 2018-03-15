@@ -8,7 +8,7 @@
     <div class="col-lg-4">
       <div class="search-form panel">
         <div class="form-style">
-          <div class="panel-heading my-2">
+          <div class="panel-heading my-1">
             <h1>Search</h1>
           </div>
           <div class="panel-body pl-2">
@@ -31,7 +31,7 @@
                       <%= f.collection_select :category, Category.all, :id, :name, include_blank: "Not functional", class: "form-control" %>
                     </div>
                   </div>
-                  <%= f.submit "Search", name: nil, class: "btn btn-primary mb-3" %>
+                  <%= f.submit "Search", name: nil, class: "btn btn-primary mb-2" %>
                 <% end %>
               </div>
             </div>          
