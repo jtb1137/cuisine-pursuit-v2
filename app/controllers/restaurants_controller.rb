@@ -55,13 +55,17 @@ class RestaurantsController < ApplicationController
         end
     end
 
+    def search
+        @restaurants = Restaurant.search(params)
+    end
+
     private
     def set_restaurant
         @restaurant = Restaurant.find(params[:id])
     end
 
     def restaurant_params
-        params.require(:restaurant).permit(:name, :address1, :address2, :city, :state, :zipcode,
+        params.require(:restaurant).permit(:name, :address1, :address2, :city, :state, :zipcode, :location, :search,
             :image, :submitted_by, category_ids:[], categories_attributes: [ :id, :name ])
     end
 

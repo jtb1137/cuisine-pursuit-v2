@@ -33,4 +33,10 @@ class Restaurant < ApplicationRecord
         end
     end
 
+    def self.search(params)
+        restaurants = Restaurant.where("name LIKE ?", "%#{params[:search]}%")
+        restaurants = restaurants.near(params[:location]) if params[:location].present?
+        restaurants
+    end
+
 end
