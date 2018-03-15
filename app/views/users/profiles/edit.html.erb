@@ -4,6 +4,7 @@
             <div class="form-style panel p-3">
                 <div class="panel-heading">
                     <h1>Edit Profile</h1>
+                    <%= link_to "Back", profile_path(current_user), class: "btn btn-primary" %>
                 </div>
                 <div class="panel-body p-3">
                     <%= image_tag @user.avatar.url(:thumb), class: "pb-3" %>
