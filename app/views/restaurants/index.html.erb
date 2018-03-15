@@ -1,13 +1,41 @@
 <div class="container">
-      <div class="row my-4">
+      <div class="row">
         <div class="col-lg-8">
-          <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
+          <div class="homepage-display panel">    
+            <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
+          </div>
         </div>
         <div class="col-lg-4">
-          <h1>Cuisine Pursuit</h1>
-          <p>Find the best restaurants near you!</p>
-          <p>This image space could make a good spot for a carousel! Or have it set an image based on user location!</p>
-          <%= link_to "Add New Restaurant!", new_restaurant_path, class: "btn btn-primary" %>
+          <div class="search-form panel">
+            <div class="form-style">
+              <div class="panel-heading my-2">
+                <h1>Search</h1>
+              </div>
+              <div class="panel-body pl-2">
+                <%= form_for search_restaurants_path do |f| %>
+                    <div class="form-group row">
+                      <%= f.label :search, class: "col-sm-3 col-form-label" %>
+                      <div class="col-sm-8">
+                          <%= f.text_field :search, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <%= f.label :location, class: "col-sm-3 col-form-label" %>
+                      <div class="col-sm-8">
+                          <%= f.text_field :location, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <%= f.label :category, class: "col-sm-3 col-form-label" %>
+                      <div class="col-sm-8">
+                          <%= f.collection_select :category, Category.all, :id, :name, include_blank: true, class: "form-control" %>
+                      </div>
+                    </div>
+                    <%= f.submit "Search", class: "btn btn-primary mb-3" %>
+                  <% end %>
+              </div>
+            </div>          
+          </div>
         </div>
       </div>
       <div class="card text-white bg-secondary my-4 text-center">
@@ -21,5 +49,4 @@
         <% end %>
       </div>
     </div>
-
 </div>

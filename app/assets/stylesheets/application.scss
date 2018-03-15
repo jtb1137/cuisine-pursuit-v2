@@ -21,10 +21,6 @@ body {
     height: 100%
 }
 
-.container {
-    padding-bottom: 2em;
-}
-
 /* form page styling */
 .form-style {
     text-align: center;
@@ -53,4 +49,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+/* global styling */
+
+.container {
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
