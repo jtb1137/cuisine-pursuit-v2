@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :favorite]
-    skip_before_action :authenticate_user!, only: [:show]
+    skip_before_action :authenticate_user!, only: [:index, :show]
 
     def index
         # visitor_location = request.location.city
