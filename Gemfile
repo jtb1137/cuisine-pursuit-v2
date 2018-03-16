@@ -54,6 +54,9 @@ gem 'pry'
 
 # Location services
 gem 'geocoder'
+# Fake information for testing
+gem 'faker'
+
 
 
 

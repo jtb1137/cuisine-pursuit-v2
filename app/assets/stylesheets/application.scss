@@ -21,11 +21,9 @@ body {
     height: 100%
 }
 
-/* form page styling */
-.form-style {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+/* global styling */
+.container {
+    margin: 3em;
 }
 
 .panel {
@@ -33,13 +31,16 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* form page styling */
+.form-style {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .form-container {
     padding: 3em;
 }
-
-/* panel styling */
-
-/* google maps styling */
 
 /* user profile styling */
 .user-profile-thumb {
@@ -49,9 +50,4 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-}
-
-/* global styling */
-.container {
-    margin: 3em;
 }
